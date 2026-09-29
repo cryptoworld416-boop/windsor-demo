@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Boutique Hotel Concept</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;1,400&family=Inter:wght@300;400&display=swap" rel="stylesheet">
+<style>
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{background:#F5F1EA;color:#0D0D0D;font-family:'Inter',sans-serif;font-weight:300;line-height:1.6}
+  a{text-decoration:none;color:inherit}
+  .eyebrow{font-size:.68rem;letter-spacing:.35em;text-transform:uppercase}
+  .banner{background:#C8B28A;color:#0D0D0D;text-align:center;padding:8px;font-size:.65rem;letter-spacing:.35em;text-transform:uppercase}
+
+  nav{padding:22px 40px;display:flex;justify-content:space-between;align-items:center;position:fixed;top:33px;left:0;right:0;z-index:50;color:#F5F1EA;transition:.4s}
+  nav.solid{background:rgba(13,13,13,.9);backdrop-filter:blur(14px);padding:14px 40px;border-bottom:1px solid rgba(200,178,138,.25)}
+  .logo-img{height:48px;width:auto}
+  .nav-links{display:flex;gap:30px;list-style:none}
+  .nav-links a{font-size:.68rem;letter-spacing:.35em;text-transform:uppercase}
+  .nav-links a:hover{color:#C8B28A}
+  .nav-cta{border:1px solid #C8B28A;color:#C8B28A;padding:12px 22px;font-size:.68rem;letter-spacing:.35em;text-transform:uppercase}
+  .nav-cta:hover{background:#C8B28A;color:#0D0D0D}
+  @media(max-width:900px){.nav-links{display:none}}
+
+  .hero{min-height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:140px 40px 80px;background:linear-gradient(180deg,rgba(13,13,13,.55),rgba(13,13,13,.75)),url('https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=2000&q=80') center/cover;color:#F5F1EA}
+  .hero .eyebrow{color:#C8B28A;margin-bottom:28px}
+  .hero h1{font-family:'Cormorant Garamond',serif;font-weight:300;font-size:clamp(2.8rem,7vw,7rem);line-height:.98;letter-spacing:-.015em;max-width:1000px;margin-bottom:26px}
+  .hero h1 em{color:#C8B28A;font-style:italic}
+  .hero p{max-width:560px;margin-bottom:40px;color:rgba(245,241,234,.9)}
+  .btn{display:inline-block;padding:16px 32px;font-size:.68rem;letter-spacing:.35em;text-transform:uppercase;transition:.3s;cursor:pointer;border:none;font-family:inherit}
+  .btn-gold{background:#C8B28A;color:#0D0D0D}
+  .btn-gold:hover{background:#F5F1EA}
+  .btn-outline-light{border:1px solid #F5F1EA;color:#F5F1EA;background:transparent}
+  .btn-outline-light:hover{background:#F5F1EA;color:#0D0D0D}
+  .btn-dark{background:#0D0D0D;color:#F5F1EA}
+  .btn-dark:hover{background:#C8B28A;color:#0D0D0D}
+  .hero-ctas{display:flex;gap:14px;flex-wrap:wrap;justify-content:center}
+
+  section{padding:120px 40px}
+  .container{max-width:1300px;margin:0 auto}
+  @media(max-width:700px){section{padding:80px 24px}}
+
+  .story{text-align:center;max-width:800px;margin:0 auto}
+  .story .eyebrow{color:#C8B28A;margin-bottom:22px}
+  .story h2{font-family:'Cormorant Garamond',serif;font-size:clamp(2.2rem,4.5vw,4rem);font-weight:300;line-height:1.05;margin-bottom:30px}
+  .story p{color:rgba(13,13,13,.7);max-width:620px;margin:0 auto}
+
+  /* ROOMS */
+  .rooms-head{text-align:center;margin-bottom:60px}
+  .rooms-head .eyebrow{color:#C8B28A;margin-bottom:16px}
+  .rooms-head h2{font-family:'Cormorant Garamond',serif;font-size:clamp(2.2rem,4.5vw,4rem);font-weight:300;line-height:1}
+  .rooms{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
+  @media(max-width:900px){.rooms{grid-template-columns:1fr}}
+  .room{background:#fff;overflow:hidden;transition:.3s}
+  .room:hover{transform:translateY(-4px)}
+  .room-img{aspect-ratio:4/3;background-size:cover;background-position:center}
+  .room-body{padding:32px 28px}
+  .room .eyebrow{color:#C8B28A;margin-bottom:10px}
+  .room h3{font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-weight:400;margin-bottom:14px}
+  .room p{font-size:.9rem;color:rgba(13,13,13,.65);margin-bottom:20px}
+  .room .specs{display:flex;gap:20px;font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;color:rgba(13,13,13,.5);margin-bottom:20px}
+  .room .price{font-family:'Cormorant Garamond',serif;font-size:1.15rem;color:#8a7355}
+
+  /* AMENITIES */
+  .amenities{background:#0D0D0D;color:#F5F1EA}
+  .amen-head{text-align:center;margin-bottom:70px}
+  .amen-head .eyebrow{color:#C8B28A;margin-bottom:16px}
+  .amen-head h2{font-family:'Cormorant Garamond',serif;font-size:clamp(2rem,4vw,3.6rem);font-weight:300;line-height:1}
+  .amen-grid{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:repeat(3,1fr);gap:40px}
+  @media(max-width:800px){.amen-grid{grid-template-columns:1fr}}
+  .amen h3{font-family:'Cormorant Garamond',serif;font-size:1.3rem;font-weight:400;margin-bottom:12px;color:#C8B28A}
+  .amen p{font-size:.9rem;color:rgba(245,241,234,.7);line-height:1.7}
+
+  /* LOCAL AREA */
+  .local{background:#EFE8DF}
+  .local-head{text-align:center;margin-bottom:60px}
+  .local-head .eyebrow{color:#8a7355;margin-bottom:16px}
+  .local-head h2{font-family:'Cormorant Garamond',serif;font-size:clamp(2rem,4vw,3.6rem);font-weight:300;line-height:1}
+  .local-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;max-width:1200px;margin:0 auto}
+  @media(max-width:900px){.local-grid{grid-template-columns:1fr 1fr}}
+  .local-item{background:#fff;padding:30px 24px;text-align:center}
+  .local-item .num{font-family:'Cormorant Garamond',serif;font-size:1.6rem;color:#8a7355;margin-bottom:10px}
+  .local-item h4{font-family:'Cormorant Garamond',serif;font-size:1.15rem;font-weight:400;margin-bottom:6px}
+  .local-item p{font-size:.8rem;color:rgba(13,13,13,.55)}
+
+  /* REVIEWS */
+  .reviews{text-align:center;background:#F5F1EA}
+  .reviews .eyebrow{color:#C8B28A;margin-bottom:20px}
+  .reviews h2{font-family:'Cormorant Garamond',serif;font-size:clamp(2rem,4vw,3.6rem);font-weight:300;line-height:1;margin-bottom:60px}
+  .review-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:40px;max-width:1200px;margin:0 auto;text-align:left}
+  @media(max-width:900px){.review-grid{grid-template-columns:1fr}}
+  .review{padding:30px}
+  .review .stars{color:#C8B28A;letter-spacing:.2em;margin-bottom:16px}
+  .review p{font-family:'Cormorant Garamond',serif;font-size:1.1rem;font-style:italic;line-height:1.5;margin-bottom:20px;color:rgba(13,13,13,.75)}
+  .review .who{font-size:.72rem;letter-spacing:.3em;text-transform:uppercase;color:rgba(13,13,13,.5)}
+
+  /* BOOKING */
+  .booking{background:#0D0D0D;color:#F5F1EA;padding:140px 40px;text-align:center}
+  .booking .eyebrow{color:#C8B28A;margin-bottom:20px}
+  .booking h2{font-family:'Cormorant Garamond',serif;font-size:clamp(2.2rem,5vw,5rem);font-weight:300;line-height:1;max-width:900px;margin:0 auto 24px}
+  .booking h2 em{color:#C8B28A;font-style:italic}
+  .booking p{color:rgba(245,241,234,.75);max-width:520px;margin:0 auto 44px}
+  .book-form{max-width:900px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr 1fr 1fr auto;gap:14px;align-items:end}
+  .book-form .field{display:flex;flex-direction:column;gap:6px;text-align:left}
+  .book-form label{font-size:.6rem;letter-spacing:.35em;text-transform:uppercase;color:rgba(245,241,234,.5)}
+  .book-form input{padding:14px 16px;border:1px solid rgba(245,241,234,.2);background:rgba(245,241,234,.05);color:#F5F1EA;font-family:inherit;font-size:.9rem;outline:none}
+  .book-form input:focus{border-color:#C8B28A}
+  @media(max-width:800px){.book-form{grid-template-columns:1fr}}
+
+  footer{background:#0D0D0D;color:#F5F1EA;padding:70px 40px 30px;border-top:1px solid rgba(245,241,234,.08)}
+  .foot-grid{max-width:1300px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr;gap:50px}
+  .footer-logo{height:56px;width:auto;margin-bottom:16px}
+  .foot-grid p{color:rgba(245,241,234,.55);font-size:.9rem}
+  .foot-col .eyebrow{color:#C8B28A;margin-bottom:16px}
+  .foot-col ul{list-style:none}
+  .foot-col ul li{font-size:.86rem;color:rgba(245,241,234,.7);margin-bottom:10px}
+  .foot-bottom{max-width:1300px;margin:50px auto 0;padding-top:24px;border-top:1px solid rgba(245,241,234,.1);font-size:.72rem;color:rgba(245,241,234,.4)}
+  @media(max-width:800px){.foot-grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+
+<div class="banner">Concept Preview — Boutique Hotel Demo</div>
+
+<nav id="nav">
+  <a href="#"><img src="logo.png" alt="Logo" class="logo-img"></a>
+  <ul class="nav-links">
+    <li><a href="#rooms">Rooms</a></li>
+    <li><a href="#amenities">Amenities</a></li>
+    <li><a href="#local">Local Area</a></li>
+    <li><a href="#book">Book</a></li>
+  </ul>
+  <a href="#book" class="nav-cta">Book Your Stay</a>
+</nav>
+
+<div class="hero">
+  <p class="eyebrow">Windsor, Ontario</p>
+  <h1>A quiet stay<br>in the heart of<br><em>the city.</em></h1>
+  <p>A boutique hotel designed for travellers who value character, comfort, and a sense of place over chain-hotel sameness.</p>
+  <div class="hero-ctas">
+    <a href="#book" class="btn btn-gold">Book Your Stay</a>
+    <a href="#rooms" class="btn btn-outline-light">View Rooms</a>
+  </div>
+</div>
+
+<section>
+  <div class="container story">
+    <p class="eyebrow">Our Story</p>
+    <h2>A hotel with<br>a sense of place.</h2>
+    <p>Set inside a thoughtfully restored building, our rooms balance original character with modern comfort. We're small on purpose — every guest gets real attention, and every stay feels personal.</p>
+  </div>
+</section>
+
+<section id="rooms" style="background:#EFE8DF">
+  <div class="container">
+    <div class="rooms-head">
+      <p class="eyebrow">Stay With Us</p>
+      <h2>Rooms &amp; Suites</h2>
+    </div>
+    <div class="rooms">
+      <div class="room">
+        <div class="room-img" style="background-image:url('https://images.unsplash.com/photo-1618773928121-c32242e63f39?auto=format&fit=crop&w=1000&q=80')"></div>
+        <div class="room-body">
+          <p class="eyebrow">Classic</p>
+          <h3>The Garden Room</h3>
+          <p>Queen bed, courtyard view, walk-in shower. Perfect for a quiet weekend away.</p>
+          <div class="specs"><span>1 Queen</span><span>2 Guests</span></div>
+          <p class="price">From $189 / night</p>
+        </div>
+      </div>
+      <div class="room">
+        <div class="room-img" style="background-image:url('https://images.unsplash.com/photo-1590490360182-c33d57733427?auto=format&fit=crop&w=1000&q=80')"></div>
+        <div class="room-body">
+          <p class="eyebrow">Signature</p>
+          <h3>The Loft Suite</h3>
+          <p>King bed, sitting area, freestanding tub, original exposed brick.</p>
+          <div class="specs"><span>1 King</span><span>2 Guests</span></div>
+          <p class="price">From $279 / night</p>
+        </div>
+      </div>
+      <div class="room">
+        <div class="room-img" style="background-image:url('https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=1000&q=80')"></div>
+        <div class="room-body">
+          <p class="eyebrow">Family</p>
+          <h3>The Corner Suite</h3>
+          <p>Two bedrooms, private balcony, spacious living area. Ideal for longer stays.</p>
+          <div class="specs"><span>1 King · 2 Twin</span><span>4 Guests</span></div>
+          <p class="price">From $389 / night</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="amenities" class="amenities">
+  <div class="container">
+    <div class="amen-head">
+      <p class="eyebrow">Amenities</p>
+      <h2>Everything you need.<br>Nothing you don't.</h2>
+    </div>
+    <div class="amen-grid">
+      <div class="amen"><h3>Breakfast</h3><p>Locally sourced continental breakfast included with every stay.</p></div>
+      <div class="amen"><h3>Complimentary Wi-Fi</h3><p>Fast, reliable connection throughout the property.</p></div>
+      <div class="amen"><h3>Private Parking</h3><p>On-site parking available for all guests.</p></div>
+      <div class="amen"><h3>Concierge</h3><p>Restaurant recommendations, event tickets, and local tips.</p></div>
+      <div class="amen"><h3>Bicycle Rentals</h3><p>Explore Windsor-Essex on two wheels — complimentary for guests.</p></div>
+      <div class="amen"><h3>Late Checkout</h3><p>Available on request. Just ask at the front desk.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="local" class="local">
+  <div class="container">
+    <div class="local-head">
+      <p class="eyebrow">Explore Windsor</p>
+      <h2>What's nearby</h2>
+    </div>
+    <div class="local-grid">
+      <div class="local-item"><p class="num">02 min</p><h4>Riverfront</h4><p>Scenic walk along the Detroit River</p></div>
+      <div class="local-item"><p class="num">05 min</p><h4>Downtown</h4><p>Restaurants, bars, and boutiques</p></div>
+      <div class="local-item"><p class="num">10 min</p><h4>Wine Country</h4><p>EPIC Wine Country tasting rooms</p></div>
+      <div class="local-item"><p class="num">15 min</p><h4>Caesars Windsor</h4><p>Casino, shows, and dining</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="reviews">
+  <p class="eyebrow">Guest Reviews</p>
+  <h2>What our guests say</h2>
+  <div class="review-grid">
+    <div class="review">
+      <p class="stars">★★★★★</p>
+      <p>"A quiet gem. The room felt more like an apartment than a hotel — beautiful light, thoughtful details, and the staff remembered our names."</p>
+      <p class="who">— Anna R.</p>
+    </div>
+    <div class="review">
+      <p class="stars">★★★★★</p>
+      <p>"We stayed for a wedding weekend and didn't want to leave. The suite was stunning and breakfast was perfect."</p>
+      <p class="who">— Michael &amp; Sarah</p>
+    </div>
+    <div class="review">
+      <p class="stars">★★★★★</p>
+      <p>"Every detail has been considered. This is the kind of place you come back to."</p>
+      <p class="who">— Priya K.</p>
+    </div>
+  </div>
+</section>
+
+<section id="book" class="booking">
+  <p class="eyebrow">Reservations</p>
+  <h2>Book your <em>stay.</em></h2>
+  <p>Check availability and reserve directly — best rates guaranteed when you book with us.</p>
+  <form class="book-form" onsubmit="event.preventDefault();alert('Demo form');">
+    <div class="field"><label>Check In</label><input type="date" required></div>
+    <div class="field"><label>Check Out</label><input type="date" required></div>
+    <div class="field"><label>Guests</label><input type="number" value="2" min="1" required></div>
+    <div class="field"><label>Room</label><input type="text" placeholder="Any available"></div>
+    <button type="submit" class="btn btn-gold">Check Rates</button>
+  </form>
+</section>
+
+<footer>
+  <div class="foot-grid">
+    <div>
+      <img src="logo.png" alt="Logo" class="footer-logo">
+      <p>Boutique Hotel</p>
+      <p>Windsor, Ontario</p>
+    </div>
+    <div class="foot-col">
+      <p class="eyebrow">Explore</p>
+      <ul><li><a href="#rooms">Rooms</a></li><li><a href="#amenities">Amenities</a></li><li><a href="#local">Local Area</a></li><li><a href="#book">Book</a></li></ul>
+    </div>
+    <div class="foot-col">
+      <p class="eyebrow">Contact</p>
+      <ul><li>[PHONE]</li><li>[EMAIL]</li><li><a href="#">Instagram</a></li><li><a href="#">Facebook</a></li></ul>
+    </div>
+  </div>
+  <div class="foot-bottom">© 2025 Concept Demo</div>
+</footer>
+
+<script>
+  const nav=document.getElementById('nav');
+  window.addEventListener('scroll',()=>nav.classList.toggle('solid',window.scrollY>40));
+</script>
+</body>
+</html>

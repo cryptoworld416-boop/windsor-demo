@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nail Studio Concept</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;1,400&family=Inter:wght@300;400&display=swap" rel="stylesheet">
+<style>
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{background:#F5EEE7;color:#3B2A20;font-family:'Inter',sans-serif;font-weight:300;line-height:1.6}
+  a{text-decoration:none;color:inherit}
+  .eyebrow{font-size:.68rem;letter-spacing:.35em;text-transform:uppercase}
+  .banner{background:#C67B5C;color:#F5EEE7;text-align:center;padding:8px;font-size:.65rem;letter-spacing:.35em;text-transform:uppercase}
+
+  nav{padding:22px 40px;display:flex;justify-content:space-between;align-items:center;background:#F5EEE7;border-bottom:1px solid #E8D9CB;position:sticky;top:0;z-index:50}
+  .logo-img{height:48px;width:auto}
+  .nav-links{display:flex;gap:30px;list-style:none}
+  .nav-links a{font-size:.68rem;letter-spacing:.35em;text-transform:uppercase}
+  .nav-links a:hover{color:#C67B5C}
+  .nav-cta{background:#C67B5C;color:#F5EEE7;padding:12px 22px;font-size:.68rem;letter-spacing:.35em;text-transform:uppercase;transition:.3s}
+  .nav-cta:hover{background:#3B2A20}
+  @media(max-width:900px){.nav-links{display:none}}
+
+  /* CENTERED HERO WITH SPLIT IMAGES */
+  .hero{padding:100px 40px 60px;text-align:center;background:#F5EEE7}
+  .hero .eyebrow{color:#C67B5C;margin-bottom:26px}
+  .hero h1{font-family:'Cormorant Garamond',serif;font-weight:300;font-size:clamp(2.8rem,6vw,6rem);line-height:.98;letter-spacing:-.015em;max-width:1000px;margin:0 auto 26px}
+  .hero h1 em{color:#C67B5C;font-style:italic}
+  .hero p{max-width:540px;margin:0 auto 40px;color:rgba(59,42,32,.7)}
+  .hero-ctas{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+  .btn{display:inline-block;padding:16px 32px;font-size:.68rem;letter-spacing:.35em;text-transform:uppercase;transition:.3s;cursor:pointer;border:none;font-family:inherit}
+  .btn-terra{background:#C67B5C;color:#F5EEE7}
+  .btn-terra:hover{background:#3B2A20}
+  .btn-outline{border:1px solid #3B2A20;background:transparent;color:#3B2A20}
+  .btn-outline:hover{background:#3B2A20;color:#F5EEE7}
+  .btn-dark{background:#3B2A20;color:#F5EEE7}
+  .btn-dark:hover{background:#C67B5C}
+
+  /* SPLIT IMAGE ROW */
+  .img-row{margin-top:70px;max-width:1300px;margin-left:auto;margin-right:auto;display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px}
+  @media(max-width:800px){.img-row{grid-template-columns:1fr}}
+  .img-row .img{aspect-ratio:3/4;background-size:cover;background-position:center}
+  .img-row .img.tall{aspect-ratio:3/5}
+
+  section{padding:110px 40px}
+  .container{max-width:1300px;margin:0 auto}
+  @media(max-width:700px){section{padding:70px 24px}}
+
+  .intro{text-align:center;max-width:800px;margin:0 auto}
+  .intro .eyebrow{color:#C67B5C;margin-bottom:22px}
+  .intro h2{font-family:'Cormorant Garamond',serif;font-size:clamp(2.2rem,4.5vw,4rem);font-weight:300;line-height:1.05;margin-bottom:30px}
+  .intro p{color:rgba(59,42,32,.7);max-width:600px;margin:0 auto}
+
+  /* SERVICE GRID (not menu) */
+  .services{background:#EFE1D2}
+  .serv-head{text-align:center;margin-bottom:70px}
+  .serv-head .eyebrow{color:#C67B5C;margin-bottom:16px}
+  .serv-head h2{font-family:'Cormorant Garamond',serif;font-size:clamp(2.2rem,4.5vw,4rem);font-weight:300;line-height:1}
+  .serv-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+  @media(max-width:900px){.serv-grid{grid-template-columns:1fr 1fr}}
+  @media(max-width:600px){.serv-grid{grid-template-columns:1fr}}
+  .serv-card{background:#F5EEE7;padding:40px 30px;text-align:center;transition:.3s}
+  .serv-card:hover{transform:translateY(-4px);box-shadow:0 12px 30px rgba(59,42,32,.08)}
+  .serv-card .icon{font-family:'Cormorant Garamond',serif;font-size:2rem;color:#C67B5C;margin-bottom:14px;line-height:1}
+  .serv-card h3{font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-weight:400;margin-bottom:12px}
+  .serv-card p{font-size:.88rem;color:rgba(59,42,32,.6);margin-bottom:18px;min-height:42px}
+  .serv-card .price{font-family:'Cormorant Garamond',serif;font-size:1.15rem;color:#C67B5C}
+
+  /* MEMBERSHIP */
+  .member{background:#3B2A20;color:#F5EEE7}
+  .member-head{text-align:center;margin-bottom:70px}
+  .member-head .eyebrow{color:#C67B5C;margin-bottom:16px}
+  .member-head h2{font-family:'Cormorant Garamond',serif;font-size:clamp(2.2rem,4.5vw,4rem);font-weight:300;line-height:1}
+  .member-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;max-width:1200px;margin:0 auto}
+  @media(max-width:900px){.member-grid{grid-template-columns:1fr}}
+  .mem-card{padding:50px 36px;background:rgba(245,238,231,.04);border:1px solid rgba(245,238,231,.12);text-align:left;position:relative}
+  .mem-card.featured{background:rgba(198,123,92,.12);border-color:#C67B5C}
+  .mem-card.featured::before{content:'POPULAR';position:absolute;top:20px;right:20px;font-size:.58rem;letter-spacing:.35em;color:#C67B5C}
+  .mem-card .eyebrow{color:#C67B5C;margin-bottom:18px}
+  .mem-card h3{font-family:'Cormorant Garamond',serif;font-size:1.8rem;font-weight:400;margin-bottom:12px}
+  .mem-card .price{font-family:'Cormorant Garamond',serif;font-size:2rem;color:#C67B5C;margin-bottom:26px}
+  .mem-card .price span{font-size:.85rem;color:rgba(245,238,231,.5);font-family:'Inter',sans-serif}
+  .mem-card ul{list-style:none;margin-bottom:32px}
+  .mem-card ul li{font-size:.9rem;color:rgba(245,238,231,.75);padding:10px 0;border-bottom:1px solid rgba(245,238,231,.08)}
+  .mem-card ul li:last-child{border-bottom:none}
+  .mem-card ul li::before{content:'—  ';color:#C67B5C}
+  .mem-card .btn{width:100%;text-align:center}
+  .btn-outline-light{border:1px solid #F5EEE7;color:#F5EEE7;background:transparent}
+  .btn-outline-light:hover{background:#F5EEE7;color:#3B2A20}
+
+  /* INSTAGRAM FEED */
+  .feed-head{text-align:center;margin-bottom:50px}
+  .feed-head .eyebrow{color:#C67B5C;margin-bottom:16px}
+  .feed-head h2{font-family:'Cormorant Garamond',serif;font-size:clamp(2rem,4vw,3.4rem);font-weight:300;line-height:1}
+  .feed-head p{margin-top:16px;color:rgba(59,42,32,.6);font-size:.9rem}
+  .feed{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;max-width:1200px;margin:0 auto}
+  @media(max-width:700px){.feed{grid-template-columns:repeat(2,1fr)}}
+  .feed .item{aspect-ratio:1;background-size:cover;background-position:center;transition:.3s;cursor:pointer}
+  .feed .item:hover{opacity:.85}
+
+  /* FINAL */
+  .final{background:#C67B5C;color:#F5EEE7;padding:120px 40px;text-align:center}
+  .final .eyebrow{color:#3B2A20;margin-bottom:20px}
+  .final h2{font-family:'Cormorant Garamond',serif;font-size:clamp(2.2rem,5vw,5rem);font-weight:300;line-height:1;max-width:900px;margin:0 auto 24px}
+  .final h2 em{color:#3B2A20;font-style:italic}
+  .final p{color:rgba(245,238,231,.9);max-width:520px;margin:0 auto 44px}
+  .final .ctas{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+
+  footer{background:#3B2A20;color:#F5EEE7;padding:70px 40px 30px}
+  .foot-grid{max-width:1300px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr;gap:50px}
+  .footer-logo{height:56px;width:auto;margin-bottom:16px;filter:brightness(0) invert(1)}
+  .foot-grid p{color:rgba(245,238,231,.55);font-size:.9rem}
+  .foot-col .eyebrow{color:#C67B5C;margin-bottom:16px}
+  .foot-col ul{list-style:none}
+  .foot-col ul li{font-size:.86rem;color:rgba(245,238,231,.7);margin-bottom:10px}
+  .foot-bottom{max-width:1300px;margin:50px auto 0;padding-top:24px;border-top:1px solid rgba(245,238,231,.1);font-size:.72rem;color:rgba(245,238,231,.4)}
+  @media(max-width:800px){.foot-grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+
+<div class="banner">Concept Preview — Nail Studio Demo</div>
+
+<nav>
+  <a href="#"><img src="logo.png" alt="Logo" class="logo-img"></a>
+  <ul class="nav-links">
+    <li><a href="#services">Services</a></li>
+    <li><a href="#membership">Membership</a></li>
+    <li><a href="#">Gallery</a></li>
+    <li><a href="#">Book</a></li>
+  </ul>
+  <a href="#" class="nav-cta">Book Now</a>
+</nav>
+
+<div class="hero">
+  <p class="eyebrow">Windsor Nail Studio</p>
+  <h1>Nails that feel<br>like <em>you.</em></h1>
+  <p>Clean, modern nail services in a warm, welcoming space. Classic manicures, gel, and hand-painted art.</p>
+  <div class="hero-ctas">
+    <a href="#" class="btn btn-terra">Book Your Appointment</a>
+    <a href="#services" class="btn btn-outline">View Services</a>
+  </div>
+  <div class="img-row">
+    <div class="img" style="background-image:url('https://images.unsplash.com/photo-1604654894610-df63bc536371?auto=format&fit=crop&w=1000&q=80')"></div>
+    <div class="img tall" style="background-image:url('https://images.unsplash.com/photo-1610992015732-2449b76344bc?auto=format&fit=crop&w=1000&q=80')"></div>
+    <div class="img" style="background-image:url('https://images.unsplash.com/photo-1632345031435-8727f6897d53?auto=format&fit=crop&w=1000&q=80')"></div>
+  </div>
+</div>
+
+<section>
+  <div class="container intro">
+    <p class="eyebrow">Our Space</p>
+    <h2>Small studio.<br>Big attention to detail.</h2>
+    <p>We're not a high-volume salon. We're a small team that takes the time to get every nail right — and keeps the space calm while we do it.</p>
+  </div>
+</section>
+
+<section id="services" class="services">
+  <div class="container">
+    <div class="serv-head">
+      <p class="eyebrow">Services</p>
+      <h2>What We Offer</h2>
+    </div>
+    <div class="serv-grid">
+      <div class="serv-card">
+        <p class="icon">◆</p>
+        <h3>Classic Manicure</h3>
+        <p>Shaping, cuticle care, and polish. Available in classic or gel finish.</p>
+        <p class="price">$45</p>
+      </div>
+      <div class="serv-card">
+        <p class="icon">◆</p>
+        <h3>Gel Manicure</h3>
+        <p>Long-wearing gel polish with full nail prep and finish. Lasts 2–3 weeks.</p>
+        <p class="price">$55</p>
+      </div>
+      <div class="serv-card">
+        <p class="icon">◆</p>
+        <h3>Luxury Pedicure</h3>
+        <p>Soak, scrub, massage, and polish. Includes paraffin treatment.</p>
+        <p class="price">$75</p>
+      </div>
+      <div class="serv-card">
+        <p class="icon">◆</p>
+        <h3>Nail Art</h3>
+        <p>Hand-painted designs from minimal to intricate. Per nail or full set.</p>
+        <p class="price">from $5/nail</p>
+      </div>
+      <div class="serv-card">
+        <p class="icon">◆</p>
+        <h3>Acrylic Full Set</h3>
+        <p>Classic acrylic extensions with the finish of your choice.</p>
+        <p class="price">$85</p>
+      </div>
+      <div class="serv-card">
+        <p class="icon">◆</p>
+        <h3>Removal &amp; Repair</h3>
+        <p>Gentle soak-off removal or single-nail repair.</p>
+        <p class="price">from $15</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="membership" class="member">
+  <div class="container">
+    <div class="member-head">
+      <p class="eyebrow">Memberships</p>
+      <h2>Save on your regular visits</h2>
+    </div>
+    <div class="member-grid">
+      <div class="mem-card">
+        <p class="eyebrow">Monthly</p>
+        <h3>The Classic</h3>
+        <p class="price">$55 <span>/ month</span></p>
+        <ul>
+          <li>One gel manicure monthly</li>
+          <li>10% off additional services</li>
+          <li>Priority booking</li>
+        </ul>
+        <a href="#" class="btn btn-outline-light">Join</a>
+      </div>
+      <div class="mem-card featured">
+        <p class="eyebrow">Bi-Weekly</p>
+        <h3>The Regular</h3>
+        <p class="price">$95 <span>/ month</span></p>
+        <ul>
+          <li>Two gel manicures monthly</li>
+          <li>15% off additional services</li>
+          <li>Priority booking</li>
+          <li>Complimentary nail art per visit</li>
+        </ul>
+        <a href="#" class="btn btn-terra">Join</a>
+      </div>
+      <div class="mem-card">
+        <p class="eyebrow">Full</p>
+        <h3>The Full Set</h3>
+        <p class="price">$145 <span>/ month</span></p>
+        <ul>
+          <li>Two manicures + one pedicure monthly</li>
+          <li>20% off additional services</li>
+          <li>Priority booking</li>
+          <li>Complimentary nail art per visit</li>
+          <li>Birthday gift</li>
+        </ul>
+        <a href="#" class="btn btn-outline-light">Join</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section style="background:#F5EEE7">
+  <div class="container">
+    <div class="feed-head">
+      <p class="eyebrow">Follow Along</p>
+      <h2>@studio.nails</h2>
+      <p>Recent work, new designs, and studio moments</p>
+    </div>
+    <div class="feed">
+      <div class="item" style="background-image:url('https://images.unsplash.com/photo-1604654894610-df63bc536371?auto=format&fit=crop&w=800&q=80')"></div>
+      <div class="item" style="background-image:url('https://images.unsplash.com/photo-1610992015732-2449b76344bc?auto=format&fit=crop&w=800&q=80')"></div>
+      <div class="item" style="background-image:url('https://images.unsplash.com/photo-1632345031435-8727f6897d53?auto=format&fit=crop&w=800&q=80')"></div>
+      <div class="item" style="background-image:url('https://images.unsplash.com/photo-1587909209111-5097ee578ec3?auto=format&fit=crop&w=800&q=80')"></div>
+    </div>
+  </div>
+</section>
+
+<section class="final">
+  <p class="eyebrow">Appointments</p>
+  <h2>Ready for your<br><em>next set?</em></h2>
+  <p>Book online in under a minute. New clients always welcome.</p>
+  <div class="ctas">
+    <a href="#" class="btn btn-dark">Book Online →</a>
+    <a href="#" class="btn btn-outline">Call the Studio →</a>
+  </div>
+</section>
+
+<footer>
+  <div class="foot-grid">
+    <div>
+      <img src="logo.png" alt="Logo" class="footer-logo">
+      <p>Nail Studio</p>
+      <p>Windsor, Ontario</p>
+    </div>
+    <div class="foot-col">
+      <p class="eyebrow">Visit</p>
+      <ul><li><a href="#services">Services</a></li><li><a href="#membership">Memberships</a></li><li><a href="#">Gallery</a></li><li><a href="#">Book</a></li></ul>
+    </div>
+    <div class="foot-col">
+      <p class="eyebrow">Connect</p>
+      <ul><li><a href="#">Instagram</a></li><li><a href="#">TikTok</a></li><li>[EMAIL]</li><li>[PHONE]</li></ul>
+    </div>
+  </div>
+  <div class="foot-bottom">© 2025 Concept Demo</div>
+</footer>
+
+</body>
+</html>

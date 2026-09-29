@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Concept Directions — Design Portfolio</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400&family=Inter:wght@300;400&display=swap" rel="stylesheet">
+<style>
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{background:#0D0D0D;color:#F5F1EA;font-family:'Inter',sans-serif;font-weight:300;min-height:100vh;padding:80px 24px}
+  a{text-decoration:none;color:inherit}
+  .wrap{max-width:1300px;margin:0 auto}
+  .head{text-align:center;margin-bottom:100px}
+  .eyebrow{font-size:.68rem;letter-spacing:.35em;text-transform:uppercase;color:#C8B28A;margin-bottom:22px}
+  h1{font-family:'Cormorant Garamond',serif;font-weight:300;font-size:clamp(2.4rem,5vw,4.5rem);line-height:1;margin:0}
+  p.lead{margin-top:22px;color:rgba(245,241,234,.65);font-size:1.05rem}
+
+  .section-title{font-family:'Cormorant Garamond',serif;font-size:1.3rem;letter-spacing:.28em;text-transform:uppercase;color:#C8B28A;margin:80px 0 28px 0;font-weight:300;text-align:center;padding-top:50px;border-top:1px solid rgba(245,241,234,.08)}
+  .section-title:first-of-type{border-top:none;padding-top:0;margin-top:0}
+
+  .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+  @media(max-width:900px){.grid{grid-template-columns:1fr}}
+
+  .card{display:block;padding:44px 32px;border:1px solid rgba(245,241,234,.15);color:inherit;text-decoration:none;transition:.4s;background:rgba(245,241,234,.02);position:relative}
+  .card:hover{border-color:#C8B28A;background:rgba(200,178,138,.06);transform:translateY(-4px)}
+  .card h2{font-family:'Cormorant Garamond',serif;font-weight:300;font-size:1.8rem;margin:0 0 12px 0;line-height:1.1}
+  .card p{color:rgba(245,241,234,.65);font-size:.9rem;line-height:1.6;margin:0 0 24px 0;min-height:70px}
+  .card .go{font-size:.68rem;letter-spacing:.35em;text-transform:uppercase;color:#C8B28A;display:inline-block;transition:.3s}
+  .card:hover .go{color:#F5F1EA;transform:translateX(4px)}
+
+  .foot{text-align:center;margin-top:100px;padding-top:50px;border-top:1px solid rgba(245,241,234,.08);color:rgba(245,241,234,.35);font-size:.72rem;letter-spacing:.2em;text-transform:uppercase}
+  .foot .credit{margin-top:16px;font-size:.68rem;letter-spacing:.15em;color:rgba(245,241,234,.5);text-transform:none}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="head">
+    <p class="eyebrow">Design Portfolio</p>
+    <h1>Concept Directions</h1>
+    <p class="lead">Fifteen design directions across eleven industries. Click any concept to explore.</p>
+  </div>
+
+  <!-- EVENT DÉCOR -->
+  <p class="section-title">Event Décor &amp; Rentals</p>
+  <div class="grid">
+    <a class="card" href="demo-1-editorial.html">
+      <h2>Editorial</h2>
+      <p>Classic magazine pacing. Warm, wedding-forward, timeless. Safe, traditional luxury.</p>
+      <span class="go">View Concept →</span>
+    </a>
+    <a class="card" href="demo-2-cinematic.html">
+      <h2>Cinematic</h2>
+      <p>Dark and moody. Feels like a boutique hotel or luxury fashion house. Banded sections.</p>
+      <span class="go">View Concept →</span>
+    </a>
+    <a class="card" href="demo-3-split.html">
+      <h2>Split Editorial</h2>
+      <p>Modern, design-forward. Asymmetric layouts, agency-style. Most distinctive.</p>
+      <span class="go">View Concept →</span>
+    </a>
+  </div>
+
+  <!-- WEDDING PLANNING -->
+  <p class="section-title">Wedding Planning</p>
+  <div class="grid">
+    <a class="card" href="demo-9-planner.html">
+      <h2>Wedding Planner</h2>
+      <p>Editorial layout with numbered process timeline, featured weddings, and testimonial.</p>
+      <span class="go">View Concept →</span>
+    </a>
+  </div>
+
+  <!-- VENUES -->
+  <p class="section-title">Venues</p>
+  <div class="grid">
+    <a class="card" href="demo-7-venue.html">
+      <h2>Wedding &amp; Event Venue</h2>
+      <p>Split-screen hero with capacity table and package comparison. Built for venues.</p>
+      <span class="go">View Concept →</span>
+    </a>
+  </div>
+
+  <!-- PHOTOGRAPHY -->
+  <p class="section-title">Photography</p>
+  <div class="grid">
+    <a class="card" href="demo-4-photography.html">
+      <h2>Photography Portfolio</h2>
+      <p>Editorial portfolio for wedding and event photographers. Full-bleed, story-driven.</p>
+      <span class="go">View Concept →</span>
+    </a>
+  </div>
+
+  <!-- FLORALS -->
+  <p class="section-title">Florals</p>
+  <div class="grid">
+    <a class="card" href="demo-11-florist.html">
+      <h2>Floral Studio</h2>
+      <p>Soft centered layout with seasonal collections, wedding florals, and subscription option.</p>
+      <span class="go">View Concept →</span>
+    </a>
+  </div>
+
+  <!-- BEAUTY & SPA -->
+  <p class="section-title">Beauty &amp; Spa</p>
+  <div class="grid">
+    <a class="card" href="demo-8-spa.html">
+      <h2>Salon &amp; Spa</h2>
+      <p>Bottom-aligned hero with treatment menu, awards strip, and gift certificates.</p>
+      <span class="go">View Concept →</span>
+    </a>
+    <a class="card" href="demo-13-medspa.html">
+      <h2>Medical Spa</h2>
+      <p>Clinical luxury. Sage palette, credentials strip, treatments menu, consultation form.</p>
+      <span class="go">View Concept →</span>
+    </a>
+    <a class="card" href="demo-14-hair.html">
+      <h2>Hair Studio</h2>
+      <p>Editorial dark. Stylist profiles, price list, transformation gallery, bridal services.</p>
+      <span class="go">View Concept →</span>
+    </a>
+    <a class="card" href="demo-15-nail.html">
+      <h2>Nail Studio</h2>
+      <p>Warm, bright layout. Service cards, membership tiers, Instagram-forward feed.</p>
+      <span class="go">View Concept →</span>
+    </a>
+  </div>
+
+  <!-- REAL ESTATE -->
+  <p class="section-title">Real Estate</p>
+  <div class="grid">
+    <a class="card" href="demo-5-realestate.html">
+      <h2>Luxury Real Estate</h2>
+      <p>Dark, cinematic. Featured listings, neighborhood expertise, credibility stats.</p>
+      <span class="go">View Concept →</span>
+    </a>
+  </div>
+
+  <!-- FITNESS -->
+  <p class="section-title">Fitness &amp; Wellness</p>
+  <div class="grid">
+    <a class="card" href="demo-6-fitness.html">
+      <h2>Boutique Fitness</h2>
+      <p>Warm, editorial. Class offerings, weekly schedule, instructor bios, free-trial CTA.</p>
+      <span class="go">View Concept →</span>
+    </a>
+  </div>
+
+  <!-- RESTAURANTS -->
+  <p class="section-title">Restaurants</p>
+  <div class="grid">
+    <a class="card" href="demo-10-restaurant.html">
+      <h2>Fine Dining</h2>
+      <p>Dark cinematic. Full menu, chef bio, private dining, reservation widget.</p>
+      <span class="go">View Concept →</span>
+    </a>
+  </div>
+
+  <!-- HOSPITALITY -->
+  <p class="section-title">Hospitality</p>
+  <div class="grid">
+    <a class="card" href="demo-12-hotel.html">
+      <h2>Boutique Hotel</h2>
+      <p>Immersive layout with room cards, amenities grid, local-area guide, booking widget.</p>
+      <span class="go">View Concept →</span>
+    </a>
+  </div>
+
+  <p class="foot">
+    Prepared as design concepts — not final production
+    <br>
+    <span class="credit">[Your Name] · [your@email.com] · [your phone]</span>
+  </p>
+
+</div>
+</body>
+</html>
